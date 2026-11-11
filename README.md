@@ -1,6 +1,4 @@
 
-# telehealth-ptsd-meta-analysis
-
 <!-- badges: start -->
 <!-- badges: end -->
 

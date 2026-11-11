@@ -10,15 +10,15 @@ library(meta)
 # Sc = Standard Deviation Control
 
 study_data <- data.frame(
-  Study = c("Acierno 2016", "Acierno 2017", "Liu 2020", "Morland 2014", 
+  Study = c("Acierno 2016", "Acierno 2017", "Liu 2020", "Morland 2014",
             "Morland 2015", "Acierno 2021", "Morland 2022", "Peterson 2022"),
   Year = c(2016, 2017, 2020, 2014, 2015, 2021, 2022, 2022),
-  
+
   # Telehealth Group Data (Post-Treatment) *baseline SD used where Post SD missing
   Ne = c(63, 63, 80, 48, 43, 46, 25, 25),
   Me = c(47.5, 51.0, 51.3, 55.6, 50.5, 34.02, 27.1, 23.1),
   Se = c(12.7, 11.3, 16.3, 18.8, 15.3, 22.14, 9.35, 14.5),
-  
+
   # In-Person Group Data (Post-Treatment) *baseline SD used where Post SD missing
   Nc = c(73, 69, 74, 52, 49, 49, 27, 26),
   Mc = c(48.5, 45.0, 49.3, 58.7, 53.6, 28.80, 24.1, 30.9),
@@ -44,7 +44,7 @@ meta_analysis <- metacont(
 summary(meta_analysis)
 
 # Generate Forest Plot
-forest(meta_analysis, 
+forest(meta_analysis,
        sortvar = Year,             # Sort studies by Year
        prediction = TRUE,          # Add prediction interval
        print.tau2 = TRUE,          # Show heterogeneity variance
@@ -69,7 +69,7 @@ print(meta_reg)
 
 # Visualize the Regression (Bubble Plot)
 # This plots the Effect Size on Y axis and Year on X axis
-bubble(meta_reg, 
-       xlab = "Publication Year", 
+bubble(meta_reg,
+       xlab = "Publication Year",
        ylab = "Standardized Mean Difference (SMD)",
        main = "Meta-Regression: Effect Size by Year")
