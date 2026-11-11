@@ -73,3 +73,10 @@ bubble(meta_reg,
        xlab = "Publication Year",
        ylab = "Standardized Mean Difference (SMD)",
        main = "Meta-Regression: Effect Size by Year")
+
+# Funnel plot to check for publication bias
+funnel(meta_analysis,
+       main = "Funnel Plot of Standardized Mean Differences")
+
+# Egger's test (exploratory, since there are fewer than 10 studies)
+metabias(meta_analysis, k.min = 8)
