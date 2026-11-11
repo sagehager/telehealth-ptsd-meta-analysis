@@ -80,3 +80,14 @@ funnel(meta_analysis,
 
 # Egger's test (exploratory, since there are fewer than 10 studies)
 metabias(meta_analysis, k.min = 8)
+
+png("forest_plot.png", width = 12, height = 6, units = "in", res = 300)
+forest(meta_analysis,
+       sortvar = Year,             # Sort studies by Year
+       prediction = TRUE,          # Add prediction interval
+       print.tau2 = TRUE,          # Show heterogeneity variance
+       leftcols = c("studlab", "n.e", "n.c"),
+       leftlabs = c("Study", "N (Tele)", "N (IP)"),
+       xlab = "Favors Telehealth <---   ---> Favors In-Person",
+       main = "Telehealth vs In-Person PTSD Treatment Efficacy")
+dev.off()

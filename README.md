@@ -10,3 +10,4 @@ Random-effects meta-analysis of 8 RCTs (N = 812) comparing synchronous video tel
 
 **Result:** No significant difference between telehealth and in-person treatment (SMD 0.05, 95% CI −0.17 to 0.27).
 
+![Forest plot](forest_plot.png)
